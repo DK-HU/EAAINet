@@ -28,7 +28,7 @@ bash tran_7S.sh
 Notably, we need to modify the path of the downloaded models in tran_7S.sh or train_12S.sh. 
 The meaning of each part of tran_7S.sh or train_12S.sh is as follows:
 ```bash
-python main.py --model [multi_scale_trans] -dataset [7S/12S] --scene [scene name, such as chess] 
+python main.py --model multi_scale_trans -dataset [7S/12S] --scene [scene name, such as chess] 
                --data_path ./data/ --flag test --resume [model_path]
 ```
 
@@ -36,15 +36,12 @@ python main.py --model [multi_scale_trans] -dataset [7S/12S] --scene [scene name
 We can run the tran_7S.sh or train_12S.sh to train EAAINet.
 The meaning of each part of tran_7S.sh or train_12S.sh is as follows:
 ```bash
-python main.py --model [multi_scale_trans] -dataset [7S/12S] --scene [scene name, such as chess] --data_path ./data/ 
+python main.py --model multi_scale_trans -dataset [7S/12S] --scene [scene name, such as chess] --data_path ./data/ 
                --flag train --n_epoch 500 --savemodel_path [save_path]
 ```
 
-
-python main.py --model multi_scale_trans --dataset 7S --scene chess --data_path ./data/ --flag train --n_epoch 50000 --savemodel_path /mnt/share/sda-8T/dk/7Scenes/resnet18_backbone/
-
-
 # Acknowledgements
 The PnP-RANSAC pose solver is referenced from [HSCNet](https://github.com/AaltoVision/hscnet/tree/master/pnpransac).
+The sensor calibration file and the normalization translation files for the 7-Scenes dataset are from  [DSAC](https://github.com/cvlab-dresden/DSAC).
 
 
