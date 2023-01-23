@@ -30,18 +30,9 @@ class TwelveScenes(data.Dataset):
                              '.label.png']
         self.obj_keys = ['color', 'pose', 'depth', 'label']
 
-        if self.dataset == '12S' or self.split == 'test':
-            with open(os.path.join(self.root, self.scene,
-                                   '{}{}'.format(self.split, '.txt')), 'r') as f:
-                self.frames = f.readlines()
-        else:
-            self.frames = []
-            for scene in self.scenes:
-                with open(os.path.join(self.root, scene,
-                                       '{}{}'.format(self.split, '.txt')), 'r') as f:
-                    frames = f.readlines()
-                    frames = [scene + ' ' + frame for frame in frames]
-                self.frames.extend(frames)
+        with open(os.path.join(self.root, self.scene,
+                               '{}{}'.format(self.split, '.txt')), 'r') as f:
+            self.frames = f.readlines()
 
     def __len__(self):
         return len(self.frames)
@@ -51,7 +42,6 @@ class TwelveScenes(data.Dataset):
         seq_id, frame_id = frame.split('-')
         objs = {}
 
-        # 加载数据集中的文件
         objs['color'] = '/mnt/share/sda-2T/xietao/12Scenes/' + self.scene + '/data/' + seq_id + '-' + frame_id + '.color.jpg'
         objs['depth'] = '/mnt/share/sda-2T/xietao/12Scenes/' + self.scene + '/data/' + seq_id + '-' + frame_id + '.depth.png'        # Twc
         objs['pose'] = '/mnt/share/sda-2T/xietao/12Scenes/' + self.scene + '/data/' + seq_id + '-' + frame_id + '.pose.txt'
