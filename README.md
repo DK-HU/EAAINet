@@ -1,5 +1,7 @@
 This is the PyTorch implementation of our paper "EAAINet: An Element-wise Attention Network with Global Affinity Information for Accurate Indoor Visual Localization".
 
+![overall](https://raw.githubusercontent.com/DK-HU/EAAINet/main/assets/overall.png)
+
 # Installation
 Firstly, we need to set up python3 environment from requirement.txt:
 
