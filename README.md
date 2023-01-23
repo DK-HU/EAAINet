@@ -7,7 +7,6 @@ Firstly, we need to set up python3 environment from requirement.txt:
 pip3 install -r requirement.txt 
 ```
 
-
 Subsequently, we need to build the cython module to install the PnP solver:
 ```bash
 cd ./pnpransac
@@ -19,6 +18,8 @@ python setup.py build_ext --inplace
 We utilize two standard datasets (i.e, 7-Scenes and 12-Scenes) to evaluate our method.
 - 7-Scenes: The 7-Scenes dataset can be downloaded from [7-Scenes](https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/)
 - 12-Scenes: The 12-Scenes dataset can be downloaded from [12-Scenes](https://graphics.stanford.edu/projects/reloc/)
+
+# Evaluation
 
 
 # Acknowledgements
