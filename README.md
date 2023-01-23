@@ -46,4 +46,6 @@ python main.py --model multi_scale_trans -dataset [7S/12S] --scene [scene name, 
 The PnP-RANSAC pose solver is referenced from [HSCNet](https://github.com/AaltoVision/hscnet/tree/master/pnpransac).
 The sensor calibration file and the normalization translation files for the 7-Scenes dataset are from  [DSAC](https://github.com/cvlab-dresden/DSAC).
 
+# Results
+- Comparison with state-of-the-arts on 7-Scenes dataset
 
