@@ -15,8 +15,8 @@ rm -rf build
 python setup.py build_ext --inplace
 ```
 
-# Dataset
-- 7-Scenes
+# Datasets
+- 7-Scenes: 7-Scenes dataset can be downloaded from [7-Scenes](https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/)
 
 # Acknowledgements
 The PnP-RANSAC pose solver is referenced from [HSCNet](https://github.com/AaltoVision/hscnet/tree/master/pnpransac).
