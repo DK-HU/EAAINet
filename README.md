@@ -15,6 +15,9 @@ rm -rf build
 python setup.py build_ext --inplace
 ```
 
+# Dataset
+- 7-Scenes
+
 # Acknowledgements
 The PnP-RANSAC pose solver is referenced from [HSCNet](https://github.com/AaltoVision/hscnet/tree/master/pnpransac).
 
