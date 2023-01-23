@@ -21,7 +21,20 @@ We utilize two standard datasets (i.e, 7-Scenes and 12-Scenes) to evaluate our m
 
 # Evaluation
 The pre-trained models can be downloaded from 
-Then, we can modify the tran_7S.sh or train_12S.sh to evaluate our method.
+Then, we can modify the tran_7S.sh or train_12S.sh to evaluate EAAINet. 
+```bash
+bash tran_7S.sh
+```
+Notably, we need to modify the path of the models. 
+The meaning of each part in tran_7S.sh or train_12S.sh is as follows:
+```bash
+python main.py --model [multi_scale_trans] -dataset [7S/12S] --scene [scene name, such as chess] --flag test --resume [model_path]
+```
+
+
+```bash
+bash tran_7S.sh
+```
 
 
 
