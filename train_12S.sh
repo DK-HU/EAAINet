@@ -1,0 +1,3 @@
+CUDA_VISIBLE_DEVICES=0 python main.py --model multi_scale_trans --dataset 12S --scene apt1/living --data_path ./data/ --flag train --n_epoch 4000 --savemodel_path /mnt/share/sda-8T/dk/12Scenes/resnet18_backbone/
+
+# CUDA_VISIBLE_DEVICES=0 python main.py --model multi_scale_trans --dataset 12S --scene apt1/living --data_path ./data/ --flag test --resume /mnt/share/sda-8T/dk/12Scenes/resnet18_backbone/apt1/living/epoch1651_acc100.0_trans0.013275884473183543_rot0.28324058713898076.pth
