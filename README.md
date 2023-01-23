@@ -28,7 +28,8 @@ bash tran_7S.sh
 Notably, we need to modify the path of the downloaded models in tran_7S.sh or train_12S.sh. 
 The meaning of each part of tran_7S.sh or train_12S.sh is as follows:
 ```bash
-python main.py --model [multi_scale_trans] -dataset [7S/12S] --scene [scene name, such as chess] --data_path ./data/ --flag test --resume [model_path]
+python main.py --model [multi_scale_trans] -dataset [7S/12S] --scene [scene name, such as chess] 
+               --data_path ./data/ --flag test --resume [model_path]
 ```
 
 # Training
@@ -36,7 +37,7 @@ We can run the tran_7S.sh or train_12S.sh to train EAAINet.
 The meaning of each part of tran_7S.sh or train_12S.sh is as follows:
 ```bash
 python main.py --model [multi_scale_trans] -dataset [7S/12S] --scene [scene name, such as chess] --data_path ./data/ 
---flag train --n_epoch 500 --savemodel_path [save_path]
+               --flag train --n_epoch 500 --savemodel_path [save_path]
 ```
 
 
