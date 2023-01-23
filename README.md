@@ -20,6 +20,7 @@ We utilize two standard datasets (i.e, 7-Scenes and 12-Scenes) to evaluate our m
 - 12-Scenes: The 12-Scenes dataset can be downloaded from [12-Scenes](https://graphics.stanford.edu/projects/reloc/)
 
 # Evaluation
+The pre-trained models can be downloaded from 
 
 
 # Acknowledgements
