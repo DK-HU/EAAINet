@@ -20,20 +20,15 @@ We utilize two standard datasets (i.e, 7-Scenes and 12-Scenes) to evaluate our m
 - 12-Scenes: The 12-Scenes dataset can be downloaded from [12-Scenes](https://graphics.stanford.edu/projects/reloc/).
 
 # Evaluation
-The pre-trained models can be downloaded from 
-Then, we can modify the tran_7S.sh or train_12S.sh to evaluate EAAINet. 
+The pre-trained models can be downloaded from .
+Then, we can run tran_7S.sh or train_12S.sh to evaluate EAAINet on 7-Scenes and 12-Scenes datasets. 
 ```bash
 bash tran_7S.sh
 ```
-Notably, we need to modify the path of the models. 
-The meaning of each part in tran_7S.sh or train_12S.sh is as follows:
+Notably, we need to modify the path of the downloaded models in tran_7S.sh or train_12S.sh. 
+The meaning of each part is as follows:
 ```bash
 python main.py --model [multi_scale_trans] -dataset [7S/12S] --scene [scene name, such as chess] --flag test --resume [model_path]
-```
-
-
-```bash
-bash tran_7S.sh
 ```
 
 
