@@ -12,7 +12,6 @@ from datasets.utils import *
 
 
 class SevenScenes(data.Dataset):
-    # root就是--data_path
     def __init__(self, root, dataset='7S', scene='heads', split='train',
                  model='fdanet', aug='False'):
         self.intrinsics_color = np.array([[525.0, 0.0, 320.0],
@@ -32,16 +31,14 @@ class SevenScenes(data.Dataset):
         self.calibration_extrinsics = np.loadtxt(os.path.join(self.root,
                                                               'sensorTrans.txt'))
         self.scene = scene
-        self.split = split  # 模式选择
+        self.split = split
         self.obj_suffixes = ['.color.png', '.pose.txt', '.depth.png',
-                             '.label.png']  # 后缀
+                             '.label.png']
         self.obj_keys = ['color', 'pose', 'depth', 'label']
-        # 这里设定了训练/测试的图片
         with open(os.path.join(self.root, '{}{}'.format(self.split,  # ./data/7Scenes/tarin或test.txt
                                                         '.txt')), 'r') as f:
             self.frames = f.readlines()
             if self.dataset == '7S' or self.split == 'test':
-                # 列表['chess seq-03 frame-000000\n', 'chess seq-03 frame-000001\n', .............]
                 self.frames = [frame for frame in self.frames \
                                if self.scene in frame]
 
@@ -49,7 +46,6 @@ class SevenScenes(data.Dataset):
         return len(self.frames)
 
     def __getitem__(self, index):
-        # 遍历每一张图片
         frame = self.frames[index].rstrip('\n')
         scene, seq_id, frame_id = frame.split(' ')  # chess seq-03 frame-000000
         objs = {}
@@ -58,10 +54,10 @@ class SevenScenes(data.Dataset):
         objs['depth'] = '/mnt/share/sda-2T/xietao/' + self.scene + '/' + seq_id + '/' + frame_id + '.depth.png'
         img = cv2.imread(objs['color'])
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        pose = np.loadtxt(objs['pose'])  # 位姿文件(np)
+        pose = np.loadtxt(objs['pose']) 
         if self.split == 'test':
             img, pose = to_tensor_query(img, pose)
-            return img, pose  # 返回torch类型的图片和位姿
+            return img, pose 
 
         depth = cv2.imread(objs['depth'], -1)
 
@@ -69,11 +65,10 @@ class SevenScenes(data.Dataset):
 
         depth[depth == 65535] = 0
         depth = depth * 1.0
-        # 返回深度图对齐到RGB图后，RGB相应的深度信息
         depth = get_depth(depth, self.calibration_extrinsics, self.intrinsics_color, self.intrinsics_depth_inv)
 
         coord, mask = get_coord(depth, pose, self.intrinsics_color_inv)
-        img, coord, mask = data_aug(img, coord, mask, self.aug)  # 进行数据增强
+        img, coord, mask = data_aug(img, coord, mask, self.aug)
 
         coord = coord[4::8, 4::8, :]  # [60, 80, 3]
         mask = mask[4::8, 4::8].astype(np.float16)  # [60 80]
