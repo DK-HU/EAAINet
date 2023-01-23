@@ -16,6 +16,6 @@ python setup.py build_ext --inplace
 ```
 
 # Acknowledgements
-The PnP-RANSAC pose solver is referenced from [URL](https://github.com/AaltoVision/hscnet/tree/master/pnpransac) "HSCNet".
+The PnP-RANSAC pose solver is referenced from [HSCNet](https://github.com/AaltoVision/hscnet/tree/master/pnpransac).
 
 
