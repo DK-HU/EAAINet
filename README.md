@@ -22,7 +22,7 @@ We utilize two standard datasets (i.e, 7-Scenes and 12-Scenes) to evaluate our m
 - 12-Scenes: The 12-Scenes dataset can be downloaded from [12-Scenes](https://graphics.stanford.edu/projects/reloc/).
 
 # Evaluation
-The pre-trained models can be downloaded from [models](https://1drv.ms/u/s!AsLK4P4ia2R9biMdEyi_uQ-0No0?e=kLSPnh).
+The pre-trained models can be downloaded from [7-Scenes](https://1drv.ms/u/s!AsLK4P4ia2R9biMdEyi_uQ-0No0?e=kLSPnh) ansd [12-Scenes](https://1drv.ms/u/s!AsLK4P4ia2R9bzafAEnZlrXiXsU?e=KF0AyW).
 Then, we can run tran_7S.sh or train_12S.sh to evaluate EAAINet on 7-Scenes and 12-Scenes datasets. 
 ```bash
 bash tran_7S.sh
