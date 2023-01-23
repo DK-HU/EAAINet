@@ -2,4 +2,9 @@ This is the PyTorch implementation of our paper "EAAINet: An Element-wise Attent
 
 # Install
 To run our model, set up python3 environment from requirement.txt:
-$ 
+
+```bash
+
+```
+
+
